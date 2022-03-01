@@ -1,0 +1,75 @@
+<!DOCTYPE htmL>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <link rel="stylesheet" href="styles.css">
+        <!-- import font from google -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        </style>
+
+        <script language="javascript">
+            window.onload = function () {
+                submit_btn = document.getElementById("submit-btn");
+                submit_btn.addEventListener("click", validate());
+            }
+            
+            function validate() {
+                var form = document.contactform,
+                name = form.name.value,
+                email = form.email.value;
+                number = form.phone.value;
+                date = form.date.value;
+                if (name != "" && email != "" && number != "" && date != "") {
+                    alert("Thank you for scheduling an appointment! We will get back to you within 48 hours.");
+                    return true;
+                }
+                alert("Please fill out all data fields to make an appointment.");
+                    return false;
+                
+            }
+        </script>
+    </head>
+    <body>
+        
+        <!-- contact section start! -->
+        <section class="contact" id="contact">
+            <h1 class="heading">
+                <span>contact</span>
+                us
+            </h1>
+
+            <div class="row">
+                <form name="contactform" onsubmit="return validate();">
+                    <div class="box-container">
+                        <div class="box">
+                            <div class="inputBox">
+                                <span>name</span>
+                                <input type="text" name="name" placeholder="name">
+                            </div>
+                            <div class="inputBox">
+                                <span>email</span>
+                                <input type="email" name="email" placeholder="email">
+                            </div>
+                            <div class="inputBox">
+                                <span>number</span>
+                                <input type="number" name="phone" placeholder="number">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="inputBox">
+                                <span>date</span>
+                                <input type="datetime-local" name="date">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <input type="submit" value="schedule" class="btn">
+                </form>
+            </div>
+        </section>
+        <!-- end of contact section -->
+
+    </body>
+</html>
