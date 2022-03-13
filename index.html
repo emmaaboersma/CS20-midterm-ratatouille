@@ -8,27 +8,7 @@
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
         </style>
 
-        <script language="javascript">
-            window.onload = function () {
-                submit_btn = document.getElementById("btn");
-                submit_btn.addEventListener("click", validate());
-            }
-            
-            function validate() {
-                var form = document.contactform,
-                name = form.name.value,
-                email = form.email.value;
-                number = form.phone.value;
-                date = form.date.value;
-                if (name != "" && email != "" && number != "" && date != "") {
-                    alert("Thank you for scheduling an appointment! We will get back to you within 48 hours.");
-                    return true;
-                }
-                alert("Please fill out all data fields to make an appointment.");
-                    return false;
-                
-            }
-        </script>
+        
     </head>
     <body>
         
@@ -65,11 +45,32 @@
                         
                     </div>
                     
-                    <input type="submit" value="schedule" class="btn" id="btn">
+                    <input type="submit" value="schedule" class="btn" id="btn"
+                    onsubmit="validate()">
                 </form>
             </div>
         </section>
         <!-- end of contact section -->
+
+        <script language="javascript">
+            
+            function validate() {
+                var form = document.contactform,
+                name = form.name.value,
+                email = form.email.value;
+                number = form.phone.value;
+                date = form.date.value;
+                if (name != "" && email != "" && number != "" && date != "") {
+                    alert("Thank you for scheduling an appointment! We will get back to you within 48 hours.");
+                    return true;
+                } else {
+                    alert("Please fill out all data fields to make an appointment.");
+                    return false;
+                }
+                
+                
+            }
+        </script>
 
     </body>
 </html>
